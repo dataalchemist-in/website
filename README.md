@@ -33,7 +33,7 @@ CI (`.github/workflows/ci.yml`) runs `npm ci`, lint, typecheck and build on ever
 
 ## Deploy
 
-Cloudflare Pages builds the site from this repo:
+Cloudflare Pages builds the site from this repo (step-by-step: [`docs/cloudflare-pages.md`](docs/cloudflare-pages.md)):
 
 - Build command: `npm run build`
 - Output directory: `out`
