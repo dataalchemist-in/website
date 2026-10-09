@@ -52,7 +52,7 @@ The output is plain static files, so any static host (for example Vercel or Clou
 
 These are placeholders until the operator confirms them (details in `docs/brief.md`):
 
-- Contact email: `hello@dataalchemist.in` is assumed. Confirm that the mailbox exists (`components/Contact.tsx`).
-- City: the page shows `[City, State]` (`components/Contact.tsx`).
+- Contact email: `hello@dataalchemist.in` is assumed. Confirm that the address exists as a Cloudflare Email Routing rule (`components/Contact.tsx`).
+- Page copy: the operator plans to revise the text; the current copy is accepted for launch.
 - Bookshaw facts: confirm the parent flow and the bookshop line (`components/Products.tsx`).
 - Trademark: search IP India for "Data Alchemist" (classes 9, 35, 42) and the "da" mark. If the mark conflicts, the fallback is the "Sol" logo in `design/prototype/logos.dc.html`.

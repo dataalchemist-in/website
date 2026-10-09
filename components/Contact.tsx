@@ -1,6 +1,6 @@
-// OPEN ITEMS (docs/brief.md): confirm the mailbox exists, and replace the city placeholder.
+// OPEN ITEM (docs/brief.md): confirm the hello@ mailbox exists (Cloudflare Email Routing).
 const email = "hello@dataalchemist.in";
-const city = "[City, State]";
+const city = "New Delhi, Delhi";
 
 export function Contact() {
   return (
