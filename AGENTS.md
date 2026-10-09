@@ -7,7 +7,7 @@ Read `docs/brief.md` first: positioning, design tokens, logo SVG, page copy, ope
 ## Rules
 
 - Stack: Next.js 16 App Router, TypeScript, Tailwind CSS 4. Static export only (`output: "export"`, `images.unoptimized: true`); the build goes to `out/`.
-- No server code, no environment variables, no secrets. Keep the site a plain static export so it can move between Cloudflare Pages and Vercel.
+- No server code, no environment variables, no secrets. Keep the site a plain static export so it can move between hosts. It is served by a Cloudflare Worker with static assets only (`wrangler.jsonc`); do not add Worker code or an OpenNext adapter.
 - Fonts come from `next/font/google`: Young Serif (headings, wordmark) and Schibsted Grotesk (body).
 - Run Node only in Docker (`node:24-alpine`, repo mounted at `/repo`), never on the host. Commands are in `README.md`.
 - One lockfile: `package-lock.json` (npm).

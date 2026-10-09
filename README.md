@@ -33,14 +33,20 @@ CI (`.github/workflows/ci.yml`) runs `npm ci`, lint, typecheck and build on ever
 
 ## Deploy
 
-Cloudflare Pages builds the site from this repo (step-by-step: [`docs/cloudflare-pages.md`](docs/cloudflare-pages.md)):
+A Cloudflare Worker named `website` serves the files in `out/` as static assets; there is no Worker code. `wrangler.jsonc` holds its config. Cloudflare builds and deploys every push to `main` (step-by-step: [`docs/cloudflare.md`](docs/cloudflare.md)):
 
 - Build command: `npm run build`
-- Output directory: `out`
+- Deploy command: `npx wrangler deploy`
 - Environment variable: `NODE_VERSION=24`
 - Custom domain: `dataalchemist.in`, with `www.dataalchemist.in` redirecting to it
 
-The output is plain static files, so any static host (for example Vercel) works too.
+To check the deploy config without uploading anything:
+
+```sh
+docker run --rm -v "$PWD":/repo -w /repo node:24-alpine sh -c "npm run build && npx --yes wrangler@4 deploy --dry-run"
+```
+
+The output is plain static files, so any static host (for example Vercel or Cloudflare Pages) works too.
 
 ## Open items
 
