@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data Alchemist home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Schibsted+Grotesk:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#ECEFEA}
+a{color:#2E6B5E}a:hover{color:#13221F}
+a:focus-visible{outline:2px solid #2E6B5E;outline-offset:3px;border-radius:4px}
+h1,h2,h3{text-wrap:balance}
+@keyframes da-settle{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+.da-gold{animation:da-settle .9s cubic-bezier(.2,.8,.2,1) .3s both;transform-origin:center;transform-box:fill-box}
+@media (prefers-reduced-motion: reduce){.da-gold{animation:none}}
+</style>
+</helmet>
+<div style="background: #ECEFEA; color: #13221F; font-family: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.6; min-height: 100%">
+
+<header style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #13221F">
+<sc-if value="{{isSol}}" hint-placeholder-val="{{ true }}">
+<svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><g fill="#13221F"><circle cx="60" cy="20" r="2.5"></circle><circle cx="80" cy="25.4" r="3"></circle><circle cx="94.6" cy="40" r="3.5"></circle><circle cx="100" cy="60" r="4"></circle><circle cx="94.6" cy="80" r="4.5"></circle><circle cx="80" cy="94.6" r="5"></circle><circle cx="60" cy="100" r="5.5"></circle><circle cx="40" cy="94.6" r="6"></circle><circle cx="25.4" cy="80" r="6.5"></circle><circle cx="20" cy="60" r="7"></circle><circle cx="25.4" cy="40" r="7.5"></circle><circle cx="40" cy="25.4" r="8"></circle></g><circle cx="60" cy="60" r="12" fill="{{accent}}"></circle></svg>
+</sc-if>
+<sc-if value="{{isDa}}" hint-placeholder-val="{{ false }}">
+<svg width="52" height="38" viewBox="0 0 140 100" aria-hidden="true"><circle cx="36" cy="62" r="22" fill="none" stroke="#13221F" stroke-width="10"></circle><line x1="63" y1="10" x2="63" y2="84" stroke="#13221F" stroke-width="10" stroke-linecap="round"></line><circle cx="100" cy="62" r="27" fill="{{accent}}"></circle><line x1="127" y1="36" x2="127" y2="84" stroke="#13221F" stroke-width="10" stroke-linecap="round"></line></svg>
+</sc-if>
+<sc-if value="{{isCrucible}}" hint-placeholder-val="{{ false }}">
+<svg width="40" height="40" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 14 L106 98 L14 98 Z" fill="none" stroke="#13221F" stroke-width="9" stroke-linejoin="round"></path><circle cx="60" cy="72" r="13" fill="{{accent}}"></circle></svg>
+</sc-if>
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 22px; letter-spacing: -0.01em">Data Alchemist</span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 28px; font-weight: 500; font-size: 15px">
+<a href="#products" style="text-decoration: none">Products</a>
+<a href="#how" style="text-decoration: none">How we build</a>
+<a href="#contact" style="text-decoration: none">Contact</a>
+</nav>
+</header>
+
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 112px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 64px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 28px; min-width: 0">
+<h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6vw, 76px); line-height: 1.04; letter-spacing: -0.025em">We make everyday business simple.</h1>
+<p style="margin: 0; max-width: 34em; font-size: 20px; color: #3F4F4B">Data Alchemist is a product company from India. We take slow, paper-heavy work and turn it into small, clear products that anyone can use in a few taps.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center">
+<a href="#products" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #13221F; color: #ECEFEA; text-decoration: none; font-weight: 500">See our products</a>
+<a href="#contact" style="font-weight: 500">Get in touch</a>
+</div>
+</div>
+
+<figure aria-label="Everyday paperwork becomes simple products" style="margin: 0; background: #F7F8F5; border: 1px solid #D5DBD5; border-radius: 28px; padding: 36px; display: flex; flex-direction: column; gap: 28px; min-width: 0">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 14px; color: #4A5A56">How small businesses run today</span>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<span style="padding: 6px 14px; border: 1px dashed #9AA8A3; border-radius: 8px; font-size: 15px; transform: rotate(-2deg)">Printed lists</span>
+<span style="padding: 6px 14px; border: 1px dashed #9AA8A3; border-radius: 8px; font-size: 15px; transform: rotate(1.5deg)">Phone calls</span>
+<span style="padding: 6px 14px; border: 1px dashed #9AA8A3; border-radius: 8px; font-size: 15px; transform: rotate(-1deg)">Paper registers</span>
+<span style="padding: 6px 14px; border: 1px dashed #9AA8A3; border-radius: 8px; font-size: 15px; transform: rotate(2.5deg)">Cash slips</span>
+<span style="padding: 6px 14px; border: 1px dashed #9AA8A3; border-radius: 8px; font-size: 15px; transform: rotate(-2.5deg)">Forwarded messages</span>
+<span style="padding: 6px 14px; border: 1px dashed #9AA8A3; border-radius: 8px; font-size: 15px; transform: rotate(1deg)">Spreadsheets</span>
+<span style="padding: 6px 14px; border: 1px dashed #9AA8A3; border-radius: 8px; font-size: 15px; transform: rotate(-1.5deg)">Handwritten orders</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 16px" aria-hidden="true">
+<div style="flex: 1; height: 1px; background: #C3CCC6"></div>
+<svg width="90" height="64" viewBox="0 0 140 100"><circle cx="36" cy="62" r="22" fill="none" stroke="#13221F" stroke-width="10"></circle><line x1="63" y1="10" x2="63" y2="84" stroke="#13221F" stroke-width="10" stroke-linecap="round"></line><circle class="da-gold" cx="100" cy="62" r="27" fill="{{accent}}"></circle><line x1="127" y1="36" x2="127" y2="84" stroke="#13221F" stroke-width="10" stroke-linecap="round"></line></svg>
+<div style="flex: 1; height: 1px; background: #C3CCC6"></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 22px; border-radius: 16px; background: {{accent}}; color: #13221F">
+<span style="font-weight: 700; font-size: 18px">Simple products. A few taps.</span>
+<span style="font-size: 15px">Built for the people who use them</span>
+</div>
+<figcaption style="font-size: 14px; color: #4A5A56">Everyday paperwork in, simple products out.</figcaption>
+</figure>
+</section>
+
+<section id="products" style="background: #F7F8F5; border-block: 1px solid #D5DBD5">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.02em">Products</h2>
+
+<article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px; padding: 40px; border-radius: 28px; background: #ECEFEA; border: 1px solid #D5DBD5">
+<div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px">
+<h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.1">Bookshaw</h3>
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 999px; background: #DCE9E4; color: #1F4D43; font-size: 14px; font-weight: 500"><span style="width: 8px; height: 8px; border-radius: 50%; background: #2E6B5E"></span>Live</span>
+</div>
+<p style="margin: 0; font-size: 19px; max-width: 32em">School booklists and stationery, ordered in one go. Parents choose their school and class, and Bookshaw puts the whole list in the cart.</p>
+<p style="margin: 0; color: #3F4F4B; max-width: 32em">Bookshops get their orders, payments and deliveries in one place, without new hardware or training.</p>
+<a href="https://bookshaw.in" style="font-weight: 500; align-self: flex-start">Visit bookshaw.in</a>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; min-width: 0" aria-label="How a parent orders">
+<li style="display: flex; gap: 18px; align-items: baseline; padding: 18px 20px; background: #F7F8F5; border-radius: 16px"><span style="font-family: 'Young Serif', Georgia, serif; font-size: 22px; color: #2E6B5E">1</span><span><strong style="font-weight: 700">Choose the school.</strong> Search by name or area.</span></li>
+<li style="display: flex; gap: 18px; align-items: baseline; padding: 18px 20px; background: #F7F8F5; border-radius: 16px"><span style="font-family: 'Young Serif', Georgia, serif; font-size: 22px; color: #2E6B5E">2</span><span><strong style="font-weight: 700">Pick the class.</strong> The full booklist loads, ready to edit.</span></li>
+<li style="display: flex; gap: 18px; align-items: baseline; padding: 18px 20px; background: #F7F8F5; border-radius: 16px"><span style="font-family: 'Young Serif', Georgia, serif; font-size: 22px; color: #2E6B5E">3</span><span><strong style="font-weight: 700">Pay once.</strong> The order is packed and delivered home.</span></li>
+</ol>
+</article>
+
+<p style="margin: 0; color: #4A5A56">More products are on the way. Each one does one job for one kind of business.</p>
+</div>
+</section>
+
+<section id="how" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.02em">How we build</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 24px; border-top: 2px solid #13221F; min-width: 0">
+<h3 style="margin: 0; font-size: 21px; font-weight: 700">Fewest steps</h3>
+<p style="margin: 0; color: #3F4F4B">Every screen has to save the user a step. If it does not, we cut it.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 24px; border-top: 2px solid #13221F; min-width: 0">
+<h3 style="margin: 0; font-size: 21px; font-weight: 700">No waiting</h3>
+<p style="margin: 0; color: #3F4F4B">Anything you do not need to see right away happens in the background, so the app answers at once.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 24px; border-top: 2px solid #13221F; min-width: 0">
+<h3 style="margin: 0; font-size: 21px; font-weight: 700">Product first</h3>
+<p style="margin: 0; color: #3F4F4B">We spend our time on features people use today, not on technology for its own sake.</p>
+</div>
+</div>
+</section>
+
+<section id="contact" style="background: #13221F; color: #E8EEEA">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 56px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+<h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.02em">A small product company in India.</h2>
+<p style="margin: 0; color: #B9C6C1; max-width: 32em">We build, run and support our products ourselves. Write to us about a product, a partnership or a job.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+<span style="font-size: 15px; color: #B9C6C1">Email</span>
+<a href="mailto:hello@dataalchemist.in" style="font-family: 'Young Serif', Georgia, serif; font-size: clamp(26px, 3vw, 36px); color: {{accent}}; text-decoration: none; overflow-wrap: anywhere">hello@dataalchemist.in</a>
+<span style="font-size: 15px; color: #B9C6C1">[City, State]</span>
+</div>
+</div>
+<footer style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid #2C3D39; font-size: 14px; color: #93A39E">
+<span>© 2026 Data Alchemist</span>
+<span>dataalchemist.in</span>
+</footer>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#D4A12A","options":["#D4A12A","#E0B347","#C98B2B","#BFA36A"]},"logo":{"editor":"enum","default":"da","options":["sol","da","crucible"]},"$preview":{"width":1440,"height":2700}}'>
+class Component extends DCLogic {
+renderVals() {
+const logo = this.props.logo ?? 'da';
+return {
+accent: this.props.accent ?? '#D4A12A',
+isSol: logo === 'sol',
+isDa: logo === 'da',
+isCrucible: logo === 'crucible'
+};
+}
+}
+</script>
+</body>
+</html>

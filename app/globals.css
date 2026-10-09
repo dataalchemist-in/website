@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* Design tokens from docs/brief.md ("Alchemy"). */
+@theme {
+  --color-ground: #ecefea;
+  --color-surface: #f7f8f5;
+  --color-line: #d5dbd5;
+  --color-ink: #13221f;
+  --color-muted: #3f4f4b;
+  --color-muted-soft: #4a5a56;
+  --color-verdigris: #2e6b5e;
+  --color-gold: #d4a12a;
+  --color-on-dark: #e8eeea;
+  --color-on-dark-muted: #b9c6c1;
+
+  /* Supporting shades taken from the prototype. */
+  --color-chip-line: #9aa8a3;
+  --color-rule: #c3ccc6;
+  --color-live: #dce9e4;
+  --color-live-ink: #1f4d43;
+  --color-dark-line: #2c3d39;
+  --color-dark-faint: #93a39e;
+
+  --text-display: clamp(44px, 6vw, 76px);
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.025em;
+  --text-section: clamp(32px, 4vw, 48px);
+  --text-section--line-height: 1.1;
+  --text-section--letter-spacing: -0.02em;
+}
+
+@theme inline {
+  --font-serif: var(--font-young-serif), Georgia, serif;
+  --font-sans: var(--font-schibsted-grotesk), "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  a {
+    color: var(--color-verdigris);
+  }
+
+  a:hover {
+    color: var(--color-ink);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--color-verdigris);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* The page's one moment of motion: the logo's gold bowl settles in once. */
+@keyframes da-settle {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.da-settle {
+  animation: da-settle 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .da-settle {
+    animation: none;
+  }
+}
