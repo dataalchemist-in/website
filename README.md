@@ -52,14 +52,12 @@ The output is plain static files, so any static host (for example Vercel or Clou
 
 These are placeholders until the operator confirms them (details in `docs/brief.md`):
 
-- Privacy and terms (`app/privacy`, `app/terms`): plain-language pages for dataalchemist.in that link to each app's own policy (list in `components/LegalPage.tsx`). Have them reviewed.
-  - An AI review against Indian law (DPDP Act 2023, SPDI Rules) was applied on 31 October 2026. A qualified lawyer should still sign off.
-  - Confirm: no published postal address; `hello@` and `support@dataalchemist.in` both route, and which mailbox provider receives them; whether Bot Fight Mode, WAF challenges or Web Analytics are on (they change the cookie and analytics claims); the email retention you follow; the 30-day reply promise.
-  - Bookshaw is left out of the policy links until bookshaw.in/privacy and /terms are final (they still contain placeholders).
-
-
-- Contact email: `hello@dataalchemist.in` is assumed. Confirm that the address exists as a Cloudflare Email Routing rule (`components/Contact.tsx`).
+- Privacy and terms (`app/privacy`, `app/terms`): plain-language pages for dataalchemist.in. An AI review against Indian law (DPDP Act 2023, SPDI Rules) was applied on 31 October 2026, then updated with the operator's answers. A qualified lawyer should still sign off.
+  - Operator: Nitesh Singla, sole proprietor, New Delhi. No postal address or phone number is published anywhere, by choice.
+  - Mail: hello@ and support@dataalchemist.in forward to a Gmail inbox. Emails are kept, not deleted; the pages say so and offer deletion on request. No reply-time promise.
+  - App links: the Kipsa and Bookshaw policies are not final, so `appPolicies` in `components/LegalPage.tsx` is empty. Add each app before it launches.
+  - Cloudflare: confirm Web Analytics is off for dataalchemist.in (the page says there is no analytics) and decide on Bot Fight Mode (the page mentions its security cookie).
 - Page copy: the operator plans to revise the text; the current copy is accepted for launch.
 - Bookshaw and Kipsa are under development and shown as "Coming soon". Switch a card to "Live" when that product launches (`components/Products.tsx`).
 - Bookshaw facts: confirm the parent flow and the bookshop line (`components/Products.tsx`).
-- Trademark: search IP India for "Data Alchemist" (classes 9, 35, 42) and the "da" mark. If the mark conflicts, the fallback is the "Sol" logo in `design/prototype/logos.dc.html`.
+- Trademark: none registered. The operator will apply for Bookshaw and Kipsa once they have traction, and will not register Data Alchemist. The site makes no trademark claims.

@@ -18,7 +18,10 @@ export default function Terms() {
       </p>
 
       <h2>Our apps</h2>
-      <p>Each app has its own terms. When you use an app, its terms apply:</p>
+      <p>
+        Each app has its own terms, published on the app&apos;s own website before the app launches.
+        When you use an app, its terms apply.
+      </p>
       <AppPolicyLinks path="/terms" label="terms" />
 
       <h2>About this website</h2>
@@ -28,10 +31,9 @@ export default function Terms() {
         built, and their features may change before launch.
       </p>
 
-      <h2>Our names and content</h2>
+      <h2>Our content</h2>
       <p>
-        The names Data Alchemist, Bookshaw and Kipsa, our logos, and the text and design of this
-        website are the names and content we trade under. Please ask us before you copy them.
+        We made the text, pictures and design of this website. Please ask us before you copy them.
       </p>
 
       <h2>No warranty</h2>
