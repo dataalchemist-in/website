@@ -1,70 +1,105 @@
-import { Logo } from "./Logo";
+"use client";
 
-const inputs = [
-  { label: "Printed lists", tilt: "-rotate-2" },
-  { label: "Phone calls", tilt: "rotate-[1.5deg]" },
-  { label: "Paper registers", tilt: "-rotate-1" },
-  { label: "Cash slips", tilt: "rotate-[2.5deg]" },
-  { label: "Forwarded messages", tilt: "-rotate-[2.5deg]" },
-  { label: "Spreadsheets", tilt: "rotate-1" },
-  { label: "Handwritten orders", tilt: "-rotate-[1.5deg]" },
-];
+import { motion } from "motion/react";
+import { DotGrid } from "./DotGrid";
+
+const headline = "Simple apps for everyday India.".split(" ");
+const ease = [0.2, 0.8, 0.2, 1] as const;
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto grid max-w-[1200px] grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-center gap-12 px-6 pt-10 pb-24 sm:gap-16 sm:pt-[72px] sm:pb-28"
+      className="relative isolate flex min-h-[max(100svh,720px)] flex-col overflow-hidden bg-ink text-on-dark"
     >
-      <div className="flex min-w-0 flex-col gap-7">
-        <h1 className="font-serif text-display font-normal">We make everyday business simple.</h1>
-        <p className="max-w-[34em] text-[20px] text-muted">
-          Data Alchemist is a product company from India. We take slow, paper-heavy work and turn it
-          into small, clear products that anyone can use in a few taps.
-        </p>
-        <div className="flex flex-wrap items-center gap-4">
+      <DotGrid className="absolute inset-0 -z-10 size-full" />
+      {/* Darken the centre so the headline stays readable over the dots. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_55%_40%_at_50%_46%,rgba(19,34,31,0.85),transparent_75%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-ink to-transparent"
+      />
+
+      <div className="mx-auto flex w-full max-w-[920px] flex-1 flex-col items-center justify-center gap-7 px-6 pt-36 pb-16 text-center sm:pt-40 [&_a:focus-visible]:outline-gold">
+        <motion.a
+          href="#products"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease }}
+          className="group/banner rounded-full py-1 no-underline"
+        >
+          {/* The ring is 36px tall; the link's padding keeps a 44px tap target. */}
+          <span className="banner-border block rounded-full p-px shadow-[0_0_24px_rgba(212,161,42,0.18)]">
+            <span className="flex min-h-[34px] items-center gap-2.5 rounded-full bg-ink/90 px-4 py-1 text-left text-[14px] backdrop-blur">
+              <span
+                className="relative flex size-2 shrink-0"
+                aria-hidden="true"
+              >
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-gold opacity-70 motion-reduce:animate-none" />
+                <span className="relative inline-flex size-2 rounded-full bg-gold" />
+              </span>
+              <span className="text-shine-soft">
+                Coming soon: Bookshaw and Kipsa
+              </span>
+              <span
+                aria-hidden="true"
+                className="text-on-dark-muted transition-transform group-hover/banner:translate-x-1 group-hover/banner:text-on-dark"
+              >
+                →
+              </span>
+            </span>
+          </span>
+        </motion.a>
+
+        <h1 className="font-serif text-display font-normal">
+          {headline.map((word, i) => (
+            <motion.span
+              key={i}
+              className={`inline-block ${i >= headline.length - 2 ? "text-shine" : ""}`}
+              initial={{ opacity: 0, y: 28, filter: "blur(10px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.8, delay: 0.1 + i * 0.08, ease }}
+            >
+              {word}
+              {i < headline.length - 1 && " "}
+            </motion.span>
+          ))}
+        </h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease }}
+          className="max-w-[32em] text-[20px] text-on-dark-muted"
+        >
+          No queues. No paper. No stress. Just apps that do the boring work for
+          you.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.75, ease }}
+          className="flex flex-wrap items-center justify-center gap-3"
+        >
           <a
             href="#products"
-            className="inline-flex min-h-12 items-center rounded-full bg-ink px-6 font-medium text-ground no-underline hover:bg-verdigris hover:text-ground"
+            className="inline-flex min-h-12 items-center gap-2 rounded-full bg-on-dark px-6 font-medium text-ink no-underline shadow-[0_0_0_4px_rgba(212,161,42,0.15),0_10px_30px_rgba(212,161,42,0.25)] transition hover:-translate-y-0.5 hover:bg-white hover:text-ink"
           >
             See our products
+            <span aria-hidden="true">→</span>
           </a>
-          <a href="#contact" className="inline-flex min-h-12 items-center px-2 font-medium">
+          <a
+            href="#contact"
+            className="inline-flex min-h-12 items-center rounded-full border border-white/20 bg-ink/40 px-6 font-medium text-on-dark no-underline backdrop-blur transition hover:bg-white/10 hover:text-on-dark"
+          >
             Get in touch
           </a>
-        </div>
+        </motion.div>
       </div>
-
-      <figure
-        aria-label="Everyday paperwork becomes simple products"
-        className="flex min-w-0 flex-col gap-7 rounded-[28px] border border-line bg-surface p-6 sm:p-9"
-      >
-        <div className="flex flex-col gap-3.5">
-          <span className="text-sm text-muted-soft">How small businesses run today</span>
-          <ul className="flex flex-wrap gap-2.5">
-            {inputs.map((input) => (
-              <li
-                key={input.label}
-                className={`rounded-lg border border-dashed border-chip-line px-3.5 py-1.5 text-[15px] ${input.tilt}`}
-              >
-                {input.label}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex items-center gap-4" aria-hidden="true">
-          <div className="h-px flex-1 bg-rule" />
-          <Logo settle width={90} height={64} />
-          <div className="h-px flex-1 bg-rule" />
-        </div>
-        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-gold px-[22px] py-[18px] text-ink">
-          <span className="text-lg font-bold">Simple products. A few taps.</span>
-          <span className="text-[15px]">Built for the people who use them</span>
-        </div>
-        <figcaption className="text-sm text-muted-soft">
-          Everyday paperwork in, simple products out.
-        </figcaption>
-      </figure>
     </section>
   );
 }

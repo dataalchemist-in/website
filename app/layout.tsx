@@ -13,9 +13,9 @@ const schibstedGrotesk = Schibsted_Grotesk({
   subsets: ["latin"],
 });
 
-const title = "Data Alchemist: we make everyday business simple";
+const title = "Data Alchemist: simple apps for everyday India";
 const description =
-  "Data Alchemist is a product company from India. We take slow, paper-heavy work and turn it into small, clear products that anyone can use in a few taps.";
+  "No queues. No paper. No stress. Data Alchemist builds simple apps for everyday India that do the boring work for you.";
 const ogImage = {
   url: "/og.png",
   width: 1200,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ECEFEA",
+  themeColor: "#13221F",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
