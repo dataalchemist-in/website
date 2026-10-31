@@ -13,7 +13,8 @@ export default function Terms() {
   return (
     <LegalPage title="Terms" updated="31 October 2026">
       <p>
-        These terms apply when you use dataalchemist.in. By using this website, you agree to them.
+        Data Alchemist is the trading name of Nitesh Singla, a sole proprietor based in New Delhi,
+        India. These terms apply when you use dataalchemist.in. By using this website, you agree to them.
       </p>
 
       <h2>Our apps</h2>
@@ -22,25 +23,28 @@ export default function Terms() {
 
       <h2>About this website</h2>
       <p>
-        This website tells you about Data Alchemist and our apps. We keep it accurate, but the
-        information is general and may change. Apps marked &ldquo;Coming soon&rdquo; are still being
+        This website tells you about Data Alchemist and our apps. We try to keep it accurate, but the
+        information is general and may change without notice. Apps marked &ldquo;Coming soon&rdquo; are still being
         built, and their features may change before launch.
       </p>
 
       <h2>Our names and content</h2>
       <p>
         The names Data Alchemist, Bookshaw and Kipsa, our logos, and the text and design of this
-        website belong to Data Alchemist. Please ask us before you copy them.
+        website are the names and content we trade under. Please ask us before you copy them.
       </p>
 
       <h2>No warranty</h2>
       <p>
-        We provide this website &ldquo;as is&rdquo;. To the extent the law allows, we are not
-        responsible for any loss that comes from using it.
+        We provide this website &ldquo;as is&rdquo;, without any warranty. To the extent Indian law
+        allows, we are not liable for any loss that comes from using it or relying on it.
       </p>
 
       <h2>Law</h2>
-      <p>These terms follow the laws of India. Courts in New Delhi handle any dispute about them.</p>
+      <p>
+        Indian law governs these terms. Courts in New Delhi have jurisdiction over any dispute,
+        subject to any rights you have under Indian consumer law.
+      </p>
 
       <h2>Changes and questions</h2>
       <p>

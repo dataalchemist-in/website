@@ -29,7 +29,7 @@ CI (`.github/workflows/ci.yml`) runs `npm ci`, lint, typecheck and build on ever
 
 ## Social image
 
-`public/og.png` (1200×630) is rendered from `design/og/og-image.svg`. If you change the SVG, render it again with [resvg](https://github.com/RazrFalcon/resvg) and the Young Serif font file, and commit the PNG.
+`public/og.png` (1200×630) is rendered from `design/og/og-image.svg`. If you change the SVG, render it again with [resvg](https://github.com/RazrFalcon/resvg) and the Young Serif and Schibsted Grotesk font files, and commit the PNG.
 
 ## Deploy
 
@@ -53,6 +53,9 @@ The output is plain static files, so any static host (for example Vercel or Clou
 These are placeholders until the operator confirms them (details in `docs/brief.md`):
 
 - Privacy and terms (`app/privacy`, `app/terms`): plain-language pages for dataalchemist.in that link to each app's own policy (list in `components/LegalPage.tsx`). Have them reviewed.
+  - An AI review against Indian law (DPDP Act 2023, SPDI Rules) was applied on 31 October 2026. A qualified lawyer should still sign off.
+  - Confirm: no published postal address; `hello@` and `support@dataalchemist.in` both route, and which mailbox provider receives them; whether Bot Fight Mode, WAF challenges or Web Analytics are on (they change the cookie and analytics claims); the email retention you follow; the 30-day reply promise.
+  - Bookshaw is left out of the policy links until bookshaw.in/privacy and /terms are final (they still contain placeholders).
 
 
 - Contact email: `hello@dataalchemist.in` is assumed. Confirm that the address exists as a Cloudflare Email Routing rule (`components/Contact.tsx`).

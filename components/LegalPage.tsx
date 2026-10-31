@@ -7,7 +7,7 @@ import { MotionRoot } from "./motion";
 // Add a new app here and both legal pages list it.
 export const appPolicies = [
   { name: "Kipsa", site: "https://kipsa.in" },
-  { name: "Bookshaw", site: "https://bookshaw.in" },
+  // OPEN ITEM (README.md): add Bookshaw back once bookshaw.in/privacy and /terms are final.
 ];
 
 /** A list of each app's own policy page, for the privacy and terms pages. */
