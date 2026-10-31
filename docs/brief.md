@@ -5,10 +5,13 @@ The business-profile site for Data Alchemist at `dataalchemist.in`. Decided with
 ## Positioning
 
 - Data Alchemist is a **product company** (no consulting or client work). The site presents the company, not one product.
-- The products section lists **Bookshaw** only (live at https://bookshaw.in). **Tijori is not mentioned.**
+- The products section lists **Bookshaw** (https://bookshaw.in) and **Kipsa** (https://kipsa.in; added 2026-10-31). Both are under development: show "Coming soon", never "Live", until the operator says a product has launched. Each card leads with the problem it solves. Kipsa copy leads with end-to-end encryption and must not say it opens from WhatsApp. **Tijori is not mentioned.**
+- Copy (operator, 2026-10-31): simple English that most Indians read easily; short sentences; catchy where it helps. No invented numbers, customers or security claims.
 - Audience: parents, school bookshops, partners and future hires who hear the name and look it up.
 
 ## Design: "Alchemy" (option 1)
+
+**Update 2026-10-31:** the operator asked for a bolder, 21st.dev-style look. The tokens, fonts and logo below still hold. The hero is now centred over an animated canvas dot grid (`components/DotGrid.tsx`: dots light gold around the pointer, ripples run out on load and on every tap; chosen by the operator over a funnel and a particle-sort concept); the paperwork panel (chips, gold band, caption) is removed. The hero and contact sections are dark (ink) with a faint grid and gold/verdigris glows, products sit in a two-card bento with pointer spotlights, and sections reveal on scroll via `motion`. Where the motion and gold rules below conflict with `AGENTS.md`, `AGENTS.md` wins.
 
 The reference prototype is in `design/prototype/` (`home-alchemy.dc.html` = the page, `logos.dc.html` = logo concepts). These are canvas-editor files: read them for markup, copy and styles. They do not run on their own (they load the editor's runtime `support.js` and use `{{accent}}`-style holes; the accent is `#D4A12A`).
 

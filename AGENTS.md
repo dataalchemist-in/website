@@ -11,12 +11,12 @@ Read `docs/brief.md` first: positioning, design tokens, logo SVG, page copy, ope
 - Fonts come from `next/font/google`: Young Serif (headings, wordmark) and Schibsted Grotesk (body).
 - Run Node only in Docker (`node:24-alpine`, repo mounted at `/repo`), never on the host. Commands are in `README.md`.
 - One lockfile: `package-lock.json` (npm).
-- Keep it small: one page, the `Logo` component, section components in `components/`. No UI kit, no animation library.
-- Design tokens live as Tailwind theme variables in `app/globals.css`. Gold (`gold`) is only for the logo bowl, the hero "result" band and the contact email.
-- One motion only: the logo's gold bowl settles in once on load, and not at all under `prefers-reduced-motion`.
+- Keep it small: one page, the `Logo` component, section components in `components/`. No UI kit. Animation uses `motion` (`motion/react`) only, through the helpers in `components/motion.tsx`.
+- Design tokens live as Tailwind theme variables in `app/globals.css`. Gold (`gold`) is an accent: the logo bowl, the hero highlight word, the hero dot-grid glow and ripples, the banner, glows, and the contact email. Do not use it for body text or large fills.
+- Motion: the hero dot grid canvas (`components/DotGrid.tsx` on `useCanvasScene`: gold glow under the pointer, ripples on load and tap; one still frame under reduced motion; paused off-screen), entrance and scroll reveals, pointer spotlights on cards, the logo settle and the gold sheen. Everything honours `prefers-reduced-motion` (`MotionRoot` sets `reducedMotion="user"`; CSS animations stop under the media query).
 - Accessibility: visible focus, touch targets of at least 44px, no horizontal scroll down to 360px wide.
 - Copy: plain sentences, active voice, no ALL-CAPS labels, no emoji.
-- Open items (email, city, Bookshaw facts, trademark) stay as visible placeholders until the operator confirms them. They are marked `OPEN ITEM` in the code and listed in `README.md`.
+- Open items (email, Bookshaw facts, trademark) stay as visible placeholders until the operator confirms them. They are marked `OPEN ITEM` in the code and listed in `README.md`.
 - Before committing, run lint, typecheck and build (CI runs the same on every pull request).
 
 <!-- BEGIN:nextjs-agent-rules -->

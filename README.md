@@ -52,7 +52,11 @@ The output is plain static files, so any static host (for example Vercel or Clou
 
 These are placeholders until the operator confirms them (details in `docs/brief.md`):
 
+- Privacy and terms (`app/privacy`, `app/terms`): plain-language pages for dataalchemist.in that link to each app's own policy (list in `components/LegalPage.tsx`). Have them reviewed.
+
+
 - Contact email: `hello@dataalchemist.in` is assumed. Confirm that the address exists as a Cloudflare Email Routing rule (`components/Contact.tsx`).
 - Page copy: the operator plans to revise the text; the current copy is accepted for launch.
+- Bookshaw and Kipsa are under development and shown as "Coming soon". Switch a card to "Live" when that product launches (`components/Products.tsx`).
 - Bookshaw facts: confirm the parent flow and the bookshop line (`components/Products.tsx`).
 - Trademark: search IP India for "Data Alchemist" (classes 9, 35, 42) and the "da" mark. If the mark conflicts, the fallback is the "Sol" logo in `design/prototype/logos.dc.html`.

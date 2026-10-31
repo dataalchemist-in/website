@@ -20,6 +20,7 @@
   --color-live-ink: #1f4d43;
   --color-dark-line: #2c3d39;
   --color-dark-faint: #93a39e;
+  --color-danger: #b4492f;
 
   --text-display: clamp(44px, 6vw, 76px);
   --text-display--line-height: 1.04;
@@ -35,6 +36,16 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    background: var(--color-ink);
+  }
+
+  /* Keep anchored sections clear of the sticky header. */
+  section[id] {
+    scroll-margin-top: 88px;
+  }
+
   body {
     background: var(--color-ground);
     color: var(--color-ink);
@@ -82,8 +93,102 @@
   transform-box: fill-box;
 }
 
+/* A faint static dot texture for light sections, echoing the hero's dot grid. */
+.bg-dots {
+  background-image: radial-gradient(rgb(19 34 31 / 0.13) 1px, transparent 1.3px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 20%, transparent 100%);
+}
+
+/* The carousel's active dot fills up while the slide is shown. */
+.carousel-fill {
+  width: 0;
+  animation-name: carousel-fill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes carousel-fill {
+  to {
+    width: 100%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .da-settle {
+  .carousel-fill {
+    animation: none;
+    width: 100%;
+  }
+}
+
+/* The same dots for dark panels. */
+.bg-dots-dark {
+  background-image: radial-gradient(rgb(232 238 234 / 0.12) 1px, transparent 1.3px);
+  background-size: 22px 22px;
+}
+
+/* Gold sheen across one highlighted word. */
+.text-shine {
+  background: linear-gradient(100deg, #d4a12a 20%, #f4dc94 50%, #d4a12a 80%) 0 0 / 200% auto;
+  background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Announcement banner: a gold light that travels round the pill's border. */
+.banner-border {
+  position: relative;
+  overflow: hidden;
+  background: rgb(232 238 234 / 0.14);
+}
+
+.banner-border::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 640px;
+  height: 640px;
+  background: conic-gradient(transparent 0deg 280deg, #d4a12a 320deg, #f4dc94 345deg, transparent 360deg);
+  animation: banner-spin 4s linear infinite;
+}
+
+.banner-border > * {
+  position: relative;
+}
+
+@keyframes banner-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* A light sheen that sweeps across the banner text. */
+.text-shine-soft {
+  background: linear-gradient(100deg, #b9c6c1 35%, #fff4d6 50%, #b9c6c1 65%) 0 0 / 250% auto;
+  background-clip: text;
+  color: transparent;
+  animation: shine 5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .da-settle,
+  .text-shine,
+  .text-shine-soft,
+  .banner-border::before {
     animation: none;
   }
 }
