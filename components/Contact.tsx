@@ -1,7 +1,7 @@
 import { DotGrid } from "./DotGrid";
 import { Reveal } from "./motion";
 
-// OPEN ITEM (docs/brief.md): confirm the hello@ mailbox exists (Cloudflare Email Routing).
+// Confirmed: forwards to the operator's inbox through Cloudflare Email Routing.
 export const email = "hello@dataalchemist.in";
 const city = "New Delhi, Delhi";
 

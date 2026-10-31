@@ -13,7 +13,6 @@ export default function Privacy() {
   return (
     <LegalPage title="Privacy" updated="31 October 2026">
       <p>
-        {/* OPEN ITEM (README.md): add a postal address here if the operator wants one published. */}
         Data Alchemist is the trading name of Nitesh Singla, a sole proprietor based in New Delhi,
         India. We make simple apps for everyday India. This page explains how we handle your
         data on this website, and where to find the privacy policy for each of our apps.
@@ -21,8 +20,9 @@ export default function Privacy() {
 
       <h2>Our apps</h2>
       <p>
-        Each app has its own privacy policy, because each one handles different data. When you use an
-        app, its policy applies:
+        Each app has its own privacy policy, because each one handles different data. Each policy is
+        published on the app&apos;s own website before the app launches. When you use an app, its
+        policy applies.
       </p>
       <AppPolicyLinks path="/privacy" label="privacy policy" />
 
@@ -46,17 +46,17 @@ export default function Privacy() {
       <h2>When you email us</h2>
       <p>
         If you write to {email}, we receive your email address and your message. We use them only to
-        reply to you. We do not share them or add you to any mailing list. We keep your email for as
-        long as we need it to deal with your message, then delete it. Our mail passes through
-        Cloudflare Email Routing and a mailbox provider, so it may be processed outside India.
+        reply to you. We do not share them or add you to any mailing list. We keep the emails we
+        receive as a record of our conversations. If you want us to delete yours, write to us. Our
+        mail passes through Cloudflare Email Routing and Google (Gmail), so it may be processed
+        outside India.
       </p>
 
       <h2>Changes and questions</h2>
       <p>
         If this page changes, we update the date at the top. For questions or complaints about your
-        data, write to <a href={`mailto:${email}`}>{email}</a>. Nitesh Singla answers them and replies
-        within 30 days. If you are not satisfied, you may complain to the Data Protection Board of
-        India.
+        data, write to <a href={`mailto:${email}`}>{email}</a>. Nitesh Singla handles them. If you are
+        not satisfied with our answer, you may complain to the Data Protection Board of India.
       </p>
     </LegalPage>
   );

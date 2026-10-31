@@ -4,14 +4,13 @@ import { Header } from "./Header";
 import { MotionRoot } from "./motion";
 
 // Every app publishes its own privacy policy and terms at <site>/privacy and <site>/terms.
-// Add a new app here and both legal pages list it.
-export const appPolicies = [
-  { name: "Kipsa", site: "https://kipsa.in" },
-  // OPEN ITEM (README.md): add Bookshaw back once bookshaw.in/privacy and /terms are final.
-];
+// Add an app here once its policies are final, and both legal pages link to it.
+// OPEN ITEM (README.md): add Kipsa (https://kipsa.in) and Bookshaw (https://bookshaw.in) before they launch.
+export const appPolicies: { name: string; site: string }[] = [];
 
 /** A list of each app's own policy page, for the privacy and terms pages. */
 export function AppPolicyLinks({ path, label }: { path: "/privacy" | "/terms"; label: string }) {
+  if (!appPolicies.length) return null;
   return (
     <ul>
       {appPolicies.map((app) => (
