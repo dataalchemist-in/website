@@ -29,19 +29,27 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
-          className="banner-border group/banner rounded-full p-px no-underline shadow-[0_0_24px_rgba(212,161,42,0.18)]"
+          className="group/banner rounded-full py-1 no-underline"
         >
-          <span className="flex min-h-11 items-center gap-2.5 rounded-full bg-ink/90 px-4 py-1.5 text-left text-[15px] backdrop-blur">
-            <span className="relative flex size-2 shrink-0" aria-hidden="true">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-gold opacity-70 motion-reduce:animate-none" />
-              <span className="relative inline-flex size-2 rounded-full bg-gold" />
-            </span>
-            <span className="text-shine-soft">Coming soon: Bookshaw and Kipsa</span>
-            <span
-              aria-hidden="true"
-              className="text-on-dark-muted transition-transform group-hover/banner:translate-x-1 group-hover/banner:text-on-dark"
-            >
-              →
+          {/* The ring is 36px tall; the link's padding keeps a 44px tap target. */}
+          <span className="banner-border block rounded-full p-px shadow-[0_0_24px_rgba(212,161,42,0.18)]">
+            <span className="flex min-h-[34px] items-center gap-2.5 rounded-full bg-ink/90 px-4 py-1 text-left text-[14px] backdrop-blur">
+              <span
+                className="relative flex size-2 shrink-0"
+                aria-hidden="true"
+              >
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-gold opacity-70 motion-reduce:animate-none" />
+                <span className="relative inline-flex size-2 rounded-full bg-gold" />
+              </span>
+              <span className="text-shine-soft">
+                Coming soon: Bookshaw and Kipsa
+              </span>
+              <span
+                aria-hidden="true"
+                className="text-on-dark-muted transition-transform group-hover/banner:translate-x-1 group-hover/banner:text-on-dark"
+              >
+                →
+              </span>
             </span>
           </span>
         </motion.a>
@@ -67,7 +75,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease }}
           className="max-w-[32em] text-[20px] text-on-dark-muted"
         >
-          No queues. No paper. No stress. Just apps that do the boring work for you.
+          No queues. No paper. No stress. Just apps that do the boring work for
+          you.
         </motion.p>
 
         <motion.div
@@ -91,7 +100,6 @@ export function Hero() {
           </a>
         </motion.div>
       </div>
-
     </section>
   );
 }
